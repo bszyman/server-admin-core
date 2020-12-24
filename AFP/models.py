@@ -18,9 +18,9 @@ class AFPSettings(BaseModel):
     enable_secure_connections: bool = True
     enable_administrator_to_masq: bool = True
 
-    client_connections: int = 1
+    client_connections: str = "1"
     client_connections_limit: int = 1000
-    guest_connections: int = 1
+    guest_connections: str = "1"
     guest_connections_limit: int = 1000
 
     # Settings - Logging
@@ -31,7 +31,7 @@ class AFPSettings(BaseModel):
     event_logout: bool = True
     event_open_file: bool = True
     event_create_file: bool = True
-    event_create_Folder: bool = True
+    event_create_folder: bool = True
     event_delete: bool = True
 
     error_archive_every: bool = True
