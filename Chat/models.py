@@ -3,9 +3,13 @@ from typing import Optional, List
 from datetime import datetime
 
 
+class HostDomain(BaseModel):
+    domain: str
+
+
 class ChatSettings(BaseModel):
     # Settings - General
-    host_domains: Optional[List[str]] = []
+    host_domains: List[HostDomain] = []
     welcome_message: str = ""
     ssl_certificate: int = 1
 
