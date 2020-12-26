@@ -7,6 +7,7 @@ from Mail.models import MailService
 from NAT.models import NATService
 from NFS.models import NFSService
 from OpenDirectory.models import OpenDirectoryService
+from WebObjects.models import WebObjectsService
 
 
 def afp():
@@ -69,5 +70,13 @@ def open_directory():
     s = OpenDirectoryService()
     s.running = True
     s.start_time = datetime.now()
+
+    return s
+
+
+def web_objects():
+    s = WebObjectsService()
+    s.running = False
+    s.start_time = None
 
     return s
