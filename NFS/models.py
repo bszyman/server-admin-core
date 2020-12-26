@@ -6,7 +6,7 @@ from datetime import datetime
 class NFSSettings(BaseModel):
     # Settings - General
     number_server_daemons: int = 20
-    server_clients_mode: int = 1
+    server_clients_mode: str = "1"
 
 
 class NFSService(BaseModel):

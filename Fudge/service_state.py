@@ -5,6 +5,7 @@ from Chat.models import ChatService
 from FTP.models import FTPService
 from Mail.models import MailService
 from NAT.models import NATService
+from NFS.models import NFSService
 
 
 def afp():
@@ -51,5 +52,13 @@ def nat():
     s = NATService()
     s.running = False
     s.start_time = None
+
+    return s
+
+
+def nfs():
+    s = NFSService()
+    s.running = True
+    s.start_time = datetime.now()
 
     return s
