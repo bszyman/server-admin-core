@@ -4,6 +4,7 @@ from datetime import datetime
 
 
 class MailStores(BaseModel):
+    id: str = ""
     partition_name: str = ""
     partition_location: str = ""
 
@@ -17,6 +18,17 @@ class MailingListMember(BaseModel):
 
 class MailingList(BaseModel):
     list_name: str = ""
+    admin_user: str = ""
+    users_may_self_subscribe: bool = False
+    default_language: str = "1"
+    lang_support_en: bool = True
+    lang_support_fr: bool = False
+    lang_support_de: bool = False
+    lang_support_jp: bool = False
+    lang_support_kr: bool = False
+    lang_support_ru: bool = False
+    lang_support_es: bool = False
+    max_body_length_kb: int = 40
     members: Optional[List[MailingListMember]] = []
 
 
@@ -49,7 +61,7 @@ class MailSettings(BaseModel):
     # Settings - Filters
     scan_email_for_junk_mail: bool = False
     junk_mail_score: int = 5
-    accepted_languages: Optional[List[str]] = []
+    accepted_languages: Optional[List[int]] = []
     accepted_locales: Optional[List[str]] = []
     junk_mail_message_action: int = 1
     attach_subject_tag: bool = False

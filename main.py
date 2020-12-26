@@ -4,12 +4,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from AFP.api import router as afp_router
 from ApplicationServer.api import router as application_server_router
 from Chat.api import router as chat_router
+from FTP.api import router as ftp_router
+from Mail.api import router as mail_router
 
 app = FastAPI()
 
 app.include_router(afp_router)
 app.include_router(application_server_router)
 app.include_router(chat_router)
+app.include_router(ftp_router)
+app.include_router(mail_router)
 
 origins = [
     "http://localhost:8080",

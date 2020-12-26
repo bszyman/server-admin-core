@@ -2,6 +2,8 @@ from datetime import datetime
 from AFP.models import AFPService
 from ApplicationServer.models import ApplicationServerService
 from Chat.models import ChatService
+from FTP.models import FTPService
+from Mail.models import MailService
 
 
 def afp():
@@ -22,6 +24,22 @@ def application_server():
 
 def chat():
     s = ChatService()
+    s.running = True
+    s.start_time = datetime.now()
+
+    return s
+
+
+def ftp():
+    s = FTPService()
+    s.running = True
+    s.start_time = datetime.now()
+
+    return s
+
+
+def mail():
+    s = MailService()
     s.running = True
     s.start_time = datetime.now()
 
