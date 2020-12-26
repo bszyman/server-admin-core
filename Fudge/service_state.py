@@ -6,6 +6,7 @@ from FTP.models import FTPService
 from Mail.models import MailService
 from NAT.models import NATService
 from NFS.models import NFSService
+from OpenDirectory.models import OpenDirectoryService
 
 
 def afp():
@@ -58,6 +59,14 @@ def nat():
 
 def nfs():
     s = NFSService()
+    s.running = True
+    s.start_time = datetime.now()
+
+    return s
+
+
+def open_directory():
+    s = OpenDirectoryService()
     s.running = True
     s.start_time = datetime.now()
 

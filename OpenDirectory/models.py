@@ -17,10 +17,15 @@ class OpenDirectorySettings(BaseModel):
     enable_ldap_ssl: bool = False
     certificate: Optional[int]
 
-    auth_disable_on_date: Optional[date]
-    auth_disable_after_date: Optional[int]
-    auth_disable_inactive_days: Optional[int]
-    auth_disable_failed_attempts: Optional[int]
+    # Settings - Authentication
+    auth_disable_on_date: bool = False
+    auth_disable_date: Optional[date]
+    auth_disable_after_date: bool = False
+    auth_disable_date: Optional[int]
+    auth_disable_inactive_days: bool = False
+    auth_disable_inactive_number_days: Optional[int]
+    auth_disable_failed_attempts: bool = False
+    auth_disable_number_failed_attempts: Optional[int]
 
     pass_differ_account_name: bool = False
     pass_contain_one_letter: bool = False
