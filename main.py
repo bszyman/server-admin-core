@@ -6,6 +6,7 @@ from ApplicationServer.api import router as application_server_router
 from Chat.api import router as chat_router
 from FTP.api import router as ftp_router
 from Mail.api import router as mail_router
+from NAT.api import router as nat_router
 
 app = FastAPI()
 
@@ -14,6 +15,7 @@ app.include_router(application_server_router)
 app.include_router(chat_router)
 app.include_router(ftp_router)
 app.include_router(mail_router)
+app.include_router(nat_router)
 
 origins = [
     "http://localhost:8080",

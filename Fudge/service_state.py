@@ -4,6 +4,7 @@ from ApplicationServer.models import ApplicationServerService
 from Chat.models import ChatService
 from FTP.models import FTPService
 from Mail.models import MailService
+from NAT.models import NATService
 
 
 def afp():
@@ -42,5 +43,13 @@ def mail():
     s = MailService()
     s.running = True
     s.start_time = datetime.now()
+
+    return s
+
+
+def nat():
+    s = NATService()
+    s.running = False
+    s.start_time = None
 
     return s

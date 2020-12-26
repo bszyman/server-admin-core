@@ -9,7 +9,7 @@ class ExternalNIC(BaseModel):
 
 class NATSettings(BaseModel):
     # Settings - General
-    ip_forwarding_mode: int = 1
+    ip_forwarding_mode: str = "1"
     external_network_interface: int = 1
 
 
