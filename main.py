@@ -10,6 +10,7 @@ from NAT.api import router as nat_router
 from NFS.api import router as nfs_router
 from OpenDirectory.api import router as od_router
 from WebObjects.api import router as wo_router
+from Xgrid.api import router as xgrid_router
 
 app = FastAPI()
 
@@ -22,6 +23,7 @@ app.include_router(nat_router)
 app.include_router(nfs_router)
 app.include_router(od_router)
 app.include_router(wo_router)
+app.include_router(xgrid_router)
 
 origins = [
     "http://localhost:8080",

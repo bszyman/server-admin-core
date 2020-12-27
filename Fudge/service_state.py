@@ -8,6 +8,7 @@ from NAT.models import NATService
 from NFS.models import NFSService
 from OpenDirectory.models import OpenDirectoryService
 from WebObjects.models import WebObjectsService
+from Xgrid.models import XgridService
 
 
 def afp():
@@ -78,5 +79,13 @@ def web_objects():
     s = WebObjectsService()
     s.running = False
     s.start_time = None
+
+    return s
+
+
+def xgrid():
+    s = XgridService()
+    s.running = True
+    s.start_time = datetime.now()
 
     return s
